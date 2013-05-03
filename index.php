@@ -73,5 +73,10 @@ else {
 /**
  * Send the response to the client.
  */
-$response_obj = Response::create($response_str, $_SERVER['HTTP_ACCEPT']);
+if (isset($_GET['debug']) && $_GET['debug']) {
+    $response_obj = Response::create($response_str, 'debug');
+} else {
+    $response_obj = Response::create($response_str, $_SERVER['HTTP_ACCEPT']);
+}
+
 echo $response_obj->render();
