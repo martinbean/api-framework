@@ -16,6 +16,10 @@ class Response
     public static function create($data, $format)
     {
         switch ($format) {
+            case 'debug':
+                $obj = new ResponseDebug($data);
+            break;
+            
             case 'application/json':
             default:
                 $obj = new ResponseJson($data);
