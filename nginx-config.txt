@@ -1,0 +1,9 @@
++Here is the rewrite you need to run REST requests on nginx
++You should include that in your .conf file of your server host file 
++(usually in ..sites-enabled/YOURVHOST.conf)
++
++#Replaces HTACCESS rules in nginx rewrites
++#-------------------
++rewrite ^(.*) /index.php?$1;
++#-------------------
++
